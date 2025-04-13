@@ -1,7 +1,5 @@
-
 import { useState } from 'react';
-import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from 'lucide-react';
+import { Loader2, Linkedin, Facebook, Instagram, X } from 'lucide-react';
 
 interface FormData {
   nome: string;
@@ -16,7 +14,6 @@ interface FormErrors {
 }
 
 const WaitlistForm = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState<FormData>({
     nome: '',
     telefone: '',
@@ -24,38 +21,34 @@ const WaitlistForm = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
-    
-    // Validate name
+
     if (!formData.nome.trim()) {
       newErrors.nome = "Nome é obrigatório";
     }
-    
-    // Validate phone (must have valid DDD and exactly 9 digits after)
+
     const phoneRegex = /^([1-9]{2})[0-9]{9}$/;
     const phoneDigitsOnly = formData.telefone.replace(/\D/g, '');
     if (!phoneRegex.test(phoneDigitsOnly)) {
       newErrors.telefone = "Telefone deve ter DDD válido e 9 dígitos";
     }
-    
-    // Validate email (must contain @)
+
     if (!formData.email.includes('@')) {
       newErrors.email = "Email deve conter @";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    
+
     if (name === 'telefone') {
-      // Format phone input
       const digits = value.replace(/\D/g, '');
-      
       let formattedValue = '';
       if (digits.length <= 2) {
         formattedValue = digits;
@@ -64,7 +57,7 @@ const WaitlistForm = () => {
       } else {
         formattedValue = `${digits.slice(0, 2)}${digits.slice(2, 11)}`;
       }
-      
+
       setFormData({
         ...formData,
         [name]: formattedValue
@@ -75,8 +68,7 @@ const WaitlistForm = () => {
         [name]: value
       });
     }
-    
-    // Clear error when typing
+
     if (errors[name as keyof FormErrors]) {
       setErrors({
         ...errors,
@@ -87,13 +79,13 @@ const WaitlistForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('https://hook.us2.make.com/ejhc3vgf7jhjokzsgai6f4r942ej7vdz', {
         method: 'POST',
@@ -106,15 +98,10 @@ const WaitlistForm = () => {
           email: formData.email
         }),
       });
-      
+
       if (response.ok) {
-        toast({
-          title: "Inscrição realizada com sucesso!",
-          description: "Você foi adicionado à nossa lista de espera.",
-          variant: "default",
-        });
-        
-        // Reset form
+        // Abre o modal em tela cheia
+        setModalVisible(true);
         setFormData({
           nome: '',
           telefone: '',
@@ -124,11 +111,6 @@ const WaitlistForm = () => {
         throw new Error('Falha ao enviar o formulário');
       }
     } catch (error) {
-      toast({
-        title: "Erro ao processar o cadastro",
-        description: "Por favor, tente novamente mais tarde.",
-        variant: "destructive",
-      });
       console.error('Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
@@ -136,7 +118,7 @@ const WaitlistForm = () => {
   };
 
   return (
-    <section id="waitlist" className="py-20 bg-gradient-to-b from-vdchat-black to-vdchat-darkgray text-white">
+    <section id="waitlist" className="py-2 bg-gradient-to-b from-vdchat-black to-vdchat-darkgray text-white">
       <div className="section-container">
         <div className="max-w-3xl mx-auto">
           <h2 className="section-title">
@@ -145,7 +127,7 @@ const WaitlistForm = () => {
           <p className="text-center text-gray-300 mb-12">
             Seja um dos primeiros a experimentar o VD Chat e revolucione seu processo de vendas
           </p>
-          
+
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-xl animate-fade-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -158,16 +140,12 @@ const WaitlistForm = () => {
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white/10 border ${
-                    errors.nome ? 'border-red-500' : 'border-white/20'
-                  } rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
-                  placeholder="Seu nome completo"
+                  className={`w-full px-4 py-3 bg-white/10 border ${errors.nome ? 'border-red-500' : 'border-white/20'} rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
+                  placeholder="Seu nome"
                 />
-                {errors.nome && (
-                  <p className="mt-1 text-sm text-red-500">{errors.nome}</p>
-                )}
+                {errors.nome && <p className="mt-1 text-sm text-red-500">{errors.nome}</p>}
               </div>
-              
+
               <div>
                 <label htmlFor="telefone" className="block text-sm font-medium text-gray-200 mb-1">
                   Telefone
@@ -178,16 +156,12 @@ const WaitlistForm = () => {
                   name="telefone"
                   value={formData.telefone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white/10 border ${
-                    errors.telefone ? 'border-red-500' : 'border-white/20'
-                  } rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
+                  className={`w-full px-4 py-3 bg-white/10 border ${errors.telefone ? 'border-red-500' : 'border-white/20'} rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
                   placeholder="DDD + número (ex: 11999999999)"
                 />
-                {errors.telefone && (
-                  <p className="mt-1 text-sm text-red-500">{errors.telefone}</p>
-                )}
+                {errors.telefone && <p className="mt-1 text-sm text-red-500">{errors.telefone}</p>}
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">
                   Email
@@ -198,16 +172,12 @@ const WaitlistForm = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white/10 border ${
-                    errors.email ? 'border-red-500' : 'border-white/20'
-                  } rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
+                  className={`w-full px-4 py-3 bg-white/10 border ${errors.email ? 'border-red-500' : 'border-white/20'} rounded-lg focus:outline-none focus:ring-2 focus:ring-vdchat-blue text-white`}
                   placeholder="seu@email.com"
                 />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-                )}
+                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
               </div>
-              
+
               <div className="pt-2">
                 <button
                   type="submit"
@@ -228,6 +198,37 @@ const WaitlistForm = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {modalVisible && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-xl p-8 relative max-w-md w-full text-center">
+            {/* Botão de fechar */}
+            <button
+              onClick={() => setModalVisible(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            >
+              <X size={20} />
+            </button>
+            <h3 className="text-2xl font-bold mb-4 text-vdchat-darkgray">
+              Você foi incluído na Lista de Espera!
+            </h3>
+            <p className="mb-6 text-gray-700">Obrigado por se inscrever. Enquanto isso, siga a gente nas redes sociais abaixo:</p>
+            {/* Ícones de Redes Sociais */}
+            <div className="flex items-center justify-center gap-4">
+              <a href="https://www.linkedin.com/in/dev-matheus-henrique/" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">
+                <Linkedin size={24} />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61574495844983" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">
+                <Facebook size={24} />
+              </a>
+              <a href="https://www.instagram.com/_vdchat" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">
+                <Instagram size={24} />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

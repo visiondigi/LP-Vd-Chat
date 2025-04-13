@@ -25,8 +25,8 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Advantages />
-      <WaitlistForm />
       <SupportedBy />
+      <WaitlistForm />
       <Team />
       <Footer />
     </div>

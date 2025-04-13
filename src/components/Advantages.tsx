@@ -74,7 +74,7 @@ const Advantages = () => {
   };
 
   return (
-    <section id="advantages" className="py-20 bg-vdchat-black text-white">
+    <section id="advantages" className="py-2 bg-vdchat-black text-white">
       <div className="section-container">
         <h2 className="section-title text-transparent bg-clip-text bg-gradient-to-r from-vdchat-blue to-vdchat-lightblue">
           Nossas Vantagens

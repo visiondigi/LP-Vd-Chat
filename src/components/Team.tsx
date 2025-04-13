@@ -35,7 +35,7 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-vdchat-darkgray text-white">
+    <section id="team" className="py-1 bg-vdchat-darkgray text-white">
       <div className="section-container">
         <h2 className="section-title">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-vdchat-blue to-vdchat-lightblue">Criadores</span> do VD Chat

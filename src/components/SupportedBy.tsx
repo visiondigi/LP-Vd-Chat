@@ -25,7 +25,7 @@ const SupportedBy = () => {
   ];
 
   return (
-    <section id="supported-by" className="py-20 bg-vdchat-black text-white">
+    <section id="supported-by" className="py-2 bg-vdchat-black text-white">
       <div className="section-container">
         <h2 className="section-title">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-vdchat-blue to-vdchat-lightblue">Apoiado</span> por

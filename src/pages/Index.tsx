@@ -1,12 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Advantages from '@/components/Advantages';
+import WaitlistForm from '@/components/WaitlistForm';
+import Team from '@/components/Team';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Update the title
+    document.title = 'VD Chat - IA para Captação de Leads e Vendas';
+    
+    // Add a meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'VD Chat é a IA que cria seu próprio funcionário SDR 24/7, de forma intuitiva e personalizável para captação de leads e automatização de vendas.');
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="bg-vdchat-black text-white min-h-screen">
+      <Navigation />
+      <Hero />
+      <Advantages />
+      <WaitlistForm />
+      <Team />
+      <Footer />
     </div>
   );
 };

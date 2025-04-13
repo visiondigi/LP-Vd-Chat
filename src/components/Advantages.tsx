@@ -23,13 +23,13 @@ const Advantages = () => {
     {
       id: 2,
       title: "Integração Multi-Canais",
-      description: "Integração com diversos canais, permitindo ligações e comunicação com múltiplas ferramentas.",
+      description: "Integrado com os principais canais de atendimento como WhatsApp, Messenger, Instagram, pop-ups no site e até chamadas telefônicas, o VD Chat permite que você se conecte com seus clientes de forma prática e automática.",
       icon: <Layers className="w-12 h-12 text-vdchat-blue" />
     },
     {
       id: 3,
-      title: "Integração com CRM",
-      description: "Envio automático de dados de leads qualificados para sua equipe de vendas, facilitando o follow-up.",
+      title: "Integração Com Múltiplas Ferramentas",
+      description: "Os dados dos leads qualificados são enviados automaticamente para sua equipe ou para sistemas como CRMs, planilhas ou automações — facilitando o próximo contato.",
       icon: <FileSpreadsheet className="w-12 h-12 text-vdchat-blue" />
     },
     {

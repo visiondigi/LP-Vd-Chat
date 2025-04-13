@@ -13,10 +13,10 @@ const Team = () => {
   const teamMembers: TeamMember[] = [
     {
       id: 1,
-      name: "Luiz Marçon",
+      name: "Matheus Henrique",
       description: "Founder",
       linkedinUrl: "https://www.linkedin.com/in/",
-      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFnC56r0_Dzkg/profile-displayphoto-shrink_800_800/B4DZSdnROqHUAc-/0/1737811105087?e=1750291200&v=beta&t=yvn_f56o40jtDMjUkJBJ4qpXf1_yljpo2TOJjthwVlo"
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFL9bmZM5RD7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720370366083?e=1750291200&v=beta&t=XLvoqu5vF6rmOmhM999Nn6KhGK0hc5qwje2wiTw9zrM"
     },
     {
       id: 2,
@@ -27,10 +27,10 @@ const Team = () => {
     },
     {
       id: 3,
-      name: "Matheus Henrique",
+      name: "Luiz Marçon",
       description: "Founder",
       linkedinUrl: "https://www.linkedin.com/in/",
-      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFL9bmZM5RD7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720370366083?e=1750291200&v=beta&t=XLvoqu5vF6rmOmhM999Nn6KhGK0hc5qwje2wiTw9zrM"
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFnC56r0_Dzkg/profile-displayphoto-shrink_800_800/B4DZSdnROqHUAc-/0/1737811105087?e=1750291200&v=beta&t=yvn_f56o40jtDMjUkJBJ4qpXf1_yljpo2TOJjthwVlo"
     }
   ];
 

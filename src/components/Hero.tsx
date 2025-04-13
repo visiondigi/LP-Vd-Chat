@@ -1,9 +1,11 @@
 
 import { useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ const Hero = () => {
       <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-vdchat-accent/10 blur-lg parallax" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <div className={`max-w-4xl mx-auto text-center animate-fade-in ${isMobile ? 'pt-32' : ''}`}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
             Bem-vindo ao <span className="text-transparent bg-clip-text bg-gradient-to-r from-vdchat-blue to-vdchat-lightblue">VD Chat</span>
           </h1>

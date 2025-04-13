@@ -12,7 +12,7 @@ const SupportedBy = () => {
   const supporters: Supporter[] = [
     {
       id: 1,
-      name: "Sprint-CP: UTFPR Incubator of Cornélio Procópio",
+      name: "Sprint-CP: UTFPR: Incubadora da UTFPR de Cornélio Procópio",
       imageUrl: "https://sprint.td.utfpr.edu.br/wp-content/uploads/2023/08/Captura-de-tela-2023-08-17-112626.jpg",
       websiteUrl: "https://sprint.td.utfpr.edu.br/"
     },

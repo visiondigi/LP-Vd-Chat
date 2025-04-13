@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import WaitlistForm from '@/components/WaitlistForm';
+import SupportedBy from '@/components/SupportedBy';
 import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 
@@ -25,6 +26,7 @@ const Index = () => {
       <Hero />
       <Advantages />
       <WaitlistForm />
+      <SupportedBy />
       <Team />
       <Footer />
     </div>

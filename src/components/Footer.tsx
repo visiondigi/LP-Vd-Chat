@@ -14,12 +14,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <img 
-            src="https://67f80761a3147b42d989bd00--celebrated-malabi-599b67.netlify.app/galeria/vdchat.png" 
+            src="https://roaring-strudel-a4468e.netlify.app/img/logo.png" 
             alt="VD Chat Logo" 
             className="h-12 mb-6"
           />
           
-          <div className="flex gap-x-8 mb-8">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center mb-8">
             <a 
               href="#home" 
               className="text-gray-400 hover:text-vdchat-blue transition-colors"
@@ -37,6 +37,12 @@ const Footer = () => {
               className="text-gray-400 hover:text-vdchat-blue transition-colors"
             >
               Lista de Espera
+            </a>
+            <a 
+              href="#supported-by" 
+              className="text-gray-400 hover:text-vdchat-blue transition-colors"
+            >
+              Apoiadores
             </a>
             <a 
               href="#team" 

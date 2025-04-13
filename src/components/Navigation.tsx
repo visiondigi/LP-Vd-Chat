@@ -36,7 +36,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="https://67f80761a3147b42d989bd00--celebrated-malabi-599b67.netlify.app/galeria/vdchat.png" 
+            src="https://roaring-strudel-a4468e.netlify.app/img/logo.png" 
             alt="VD Chat Logo" 
             className="h-10"
           />
@@ -61,6 +61,12 @@ const Navigation = () => {
             className="text-white hover:text-vdchat-blue transition-colors"
           >
             Lista de Espera
+          </button>
+          <button 
+            onClick={() => scrollToSection('supported-by')} 
+            className="text-white hover:text-vdchat-blue transition-colors"
+          >
+            Apoiadores
           </button>
           <button 
             onClick={() => scrollToSection('team')} 
@@ -97,6 +103,12 @@ const Navigation = () => {
               className="text-white hover:text-vdchat-blue transition-colors py-2"
             >
               Lista de Espera
+            </button>
+            <button 
+              onClick={() => scrollToSection('supported-by')} 
+              className="text-white hover:text-vdchat-blue transition-colors py-2"
+            >
+              Apoiadores
             </button>
             <button 
               onClick={() => scrollToSection('team')} 

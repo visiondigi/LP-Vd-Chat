@@ -11,12 +11,12 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update the title
-    document.title = 'VD Chat - IA para Captação de Leads e Vendas';
+    document.title = 'VD Chat';
     
     // Add a meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'VD Chat é a IA que cria seu próprio funcionário SDR 24/7, de forma intuitiva e personalizável para captação de leads e automatização de vendas.');
+      metaDescription.setAttribute('content', 'VD Chat');
     }
   }, []);
 

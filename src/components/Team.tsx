@@ -15,21 +15,21 @@ const Team = () => {
       id: 1,
       name: "Matheus Henrique",
       description: "Founder",
-      linkedinUrl: "https://www.linkedin.com/in/",
+      linkedinUrl: "https://www.linkedin.com/in/dev-matheus-henrique/",
       imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFL9bmZM5RD7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720370366083?e=1750291200&v=beta&t=XLvoqu5vF6rmOmhM999Nn6KhGK0hc5qwje2wiTw9zrM"
     },
     {
       id: 2,
       name: "João Vitor Marques",
       description: "Founder",
-      linkedinUrl: "https://www.linkedin.com/in/",
+      linkedinUrl: "http://www.linkedin.com/in/joãovitormarques",
       imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQG_-f5F8Ee69Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701764082204?e=1750291200&v=beta&t=nfqaBFzOdotBSb1kNNegb5VMVfBzLqQfuDBKlehKb6M"
     },
     {
       id: 3,
       name: "Luiz Marçon",
       description: "Founder",
-      linkedinUrl: "https://www.linkedin.com/in/",
+      linkedinUrl: "http://www.linkedin.com/in/luiz-marçon",
       imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFnC56r0_Dzkg/profile-displayphoto-shrink_800_800/B4DZSdnROqHUAc-/0/1737811105087?e=1750291200&v=beta&t=yvn_f56o40jtDMjUkJBJ4qpXf1_yljpo2TOJjthwVlo"
     }
   ];

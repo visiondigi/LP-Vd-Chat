@@ -57,16 +57,16 @@ const Navigation = () => {
             Vantagens
           </button>
           <button 
-            onClick={() => scrollToSection('waitlist')} 
-            className="text-white hover:text-vdchat-blue transition-colors"
-          >
-            Lista de Espera
-          </button>
-          <button 
             onClick={() => scrollToSection('supported-by')} 
             className="text-white hover:text-vdchat-blue transition-colors"
           >
             Apoiadores
+          </button>
+          <button 
+            onClick={() => scrollToSection('waitlist')} 
+            className="text-white hover:text-vdchat-blue transition-colors"
+          >
+            Lista de Espera
           </button>
           <button 
             onClick={() => scrollToSection('team')} 

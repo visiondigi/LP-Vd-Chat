@@ -216,7 +216,7 @@ const WaitlistForm = () => {
             <p className="mb-6 text-gray-700">Obrigado por se inscrever. Enquanto isso, siga a gente nas redes sociais abaixo:</p>
             {/* Ícones de Redes Sociais */}
             <div className="flex items-center justify-center gap-4">
-              <a href="https://www.linkedin.com/in/dev-matheus-henrique/" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">
+              <a href="http://www.linkedin.com/company/vision-digi" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">
                 <Linkedin size={24} />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61574495844983" target="_blank" rel="noopener noreferrer" className="text-vdchat-blue hover:text-vdchat-lightblue">

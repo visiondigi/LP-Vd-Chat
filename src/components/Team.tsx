@@ -16,7 +16,7 @@ const Team = () => {
       name: "Matheus Henrique",
       description: "Founder",
       linkedinUrl: "https://www.linkedin.com/in/dev-matheus-henrique/",
-      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQFL9bmZM5RD7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720370366083?e=1750291200&v=beta&t=XLvoqu5vF6rmOmhM999Nn6KhGK0hc5qwje2wiTw9zrM"
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHDbsA9mZzXIA/profile-displayphoto-shrink_400_400/B4DZb9WOeOGkAk-/0/1748007184813?e=1753920000&v=beta&t=p9ZmtP5sS4qOaI3XlEqK7Y6alp4BAJFfQ4Zt8ihbfWc"
     },
     {
       id: 2,
